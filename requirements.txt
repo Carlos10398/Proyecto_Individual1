@@ -1,3 +1,4 @@
+python-3.9.6
 anyio==3.7.0
 asttokens==2.2.1
 backcall==0.2.0
@@ -27,7 +28,6 @@ psutil==5.9.5
 pure-eval==0.2.2
 pydantic==1.10.9
 Pygments==2.15.1
-python-3.9.6
 python-dateutil==2.8.2
 pytz==2023.3
 pywin32==306
