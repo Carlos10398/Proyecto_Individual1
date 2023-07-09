@@ -1,7 +1,17 @@
 import pandas as pd
 import numpy as np
 from datetime import datetime
+from fastapi import FastAPI
 
+import uvicorn
+
+from sklearn.metrics.pairwise        import cosine_similarity
+from sklearn.utils.extmath           import randomized_svd
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise        import linear_kernel
+
+
+app = FastAPI()
 
 df = pd.read_csv('final.csv',sep = ',')
 #FUNCION 1
