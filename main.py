@@ -30,7 +30,7 @@ def score_titulo(titulo_de_la_filmación):
 def get_actor(nombre_actor):
     actor_rows = df[df['cast_names'].str.contains(nombre_actor)]
     numero = len(actor_rows)
-    actor_revenue = df[df['cast_names'].str.contains(info)]['revenue'].sum()
+    actor_revenue = df[df['cast_names'].str.contains(nombre_actor)]['revenue'].sum()
     promedio = (actor_revenue/numero)
     return ' El actor '+ nombre_actor + ' ha participado de ' + str(numero) + ' cantidad de filmaciones, el mismo ha conseguido un retorno de ' + str(actor_revenue) +' con un promedio de '+ str(promedio) + 'por filmación'
 get_actor('Tom Hanks')
