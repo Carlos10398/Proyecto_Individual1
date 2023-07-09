@@ -104,18 +104,11 @@ dias = {
     'domingo': 7
 }
 
-info = input('Ingrese el mes en español: ').lower()
+info = date_string.lower()
 if info in meses:
     mes = meses[info]   
 else:
     print('El mes ingresado no es válido.')
-
-info2 = input('Ingrese el dia en español: ').lower()
-if info2 in dias:
-    dia = dias[info2]
-else:
-    print('El dia ingresado no es válido.')   
-
 
 df['month'] = df['release_date'].apply(extract_month)
 df['day'] = df['release_date'].apply(extract_day)
@@ -167,13 +160,7 @@ dias = {
     'domingo': 7
 }
 
-info = input('Ingrese el mes en español: ').lower()
-if info in meses:
-    mes = meses[info]   
-else:
-    print('El mes ingresado no es válido.')
-
-info2 = input('Ingrese el dia en español: ').lower()
+info2 = date_string.lower()
 if info2 in dias:
     dia = dias[info2]
 else:
