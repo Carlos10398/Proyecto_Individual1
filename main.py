@@ -22,24 +22,18 @@ def presentacion():
 df = pd.read_csv('final.csv',sep = ',')
 #FUNCION 1
 @app.get("/score_titulo/{titulo_de_la_filmación}")
-def score_titulo(titulo_de_la_filmación):
-    vote_count = df.loc[df['title'] == titulo_de_la_filmación , 'vote_count'].values[0]
-    score = df.loc[df['title'] == titulo_de_la_filmación, 'popularity'].values[0]
-    year = df.loc[df['title'] == titulo_de_la_filmación, 'year'].values[0]
-    vote_average = df.loc[df['title'] == titulo_de_la_filmación, 'vote_average'].values[0]
-    if vote_count > 2000:
-        return 'La película ' + titulo_de_la_filmación + ' fue estrenada en el año ' + str(year) + '. La misma cuenta con un total de ' + str(vote_count) + ' valoraciones, con un promedio de ' + str(vote_average)
-    else:
-        return 'La película que busca no cumple con la condición de más de 2000 votos, por ende no se devolverá ningún valor.'
+def peliculas_idioma(idioma:str):
+    idioma_filtro = df[df['original_language'] == idioma]
+    cantida_pelis =  idioma_filtro['original_language'].shape[0]
+    return {'idioma:':idioma, 'cantidad peliculas:':cantida_pelis}
 #FUNCION 2
-@app.get("/get_actor/{nombre_actor}")
-def get_actor(nombre_actor):
-    actor_rows = df[df['cast_names'].str.contains(nombre_actor)]
-    numero = len(actor_rows)
-    actor_revenue = df[df['cast_names'].str.contains(nombre_actor)]['revenue'].sum()
-    promedio = (actor_revenue/numero)
-    return ' El actor '+ nombre_actor + ' ha participado de ' + str(numero) + ' cantidad de filmaciones, el mismo ha conseguido un retorno de ' + str(actor_revenue) +' con un promedio de '+ str(promedio) + 'por filmación'
-get_actor('Tom Hanks')
+@app.get("/peliculas_duracion/{pelicula}")
+def peliculas_duracion(pelicula:str):
+    filtro = df[df["title"] == pelicula]
+    duracion = filtro["runtime"].values[0] if len(pelicula) > 0 else None
+    year = filtro["year"].values[0] if len(pelicula) > 0 else None
+    return {'PELICULA:':pelicula,'duracion en minutos:':duracion, 'año de estreno:':year } 
+peliculas_duracion('Jumanji')
 #FUNCION 3
 @app.get("/get_director/{nombre_director}")
 def get_director(nombre_director):
