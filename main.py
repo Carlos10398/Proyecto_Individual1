@@ -42,65 +42,34 @@ def obtener_informacion_franquicia(franquicia):
     ganancia_promedio = franquicia_df["revenue"].mean()
     return f"La franquicia {franquicia} posee {cantidad_peliculas} películas, una ganancia total de {ganancia_total} y una ganancia promedio de {ganancia_promedio}."
 #FUNCION 4
-@app.get("/score_titulo/{titulo_de_la_filmación}")
-def score_titulo(titulo_de_la_filmación):
-    vote_count = df.loc[df['title'] == titulo_de_la_filmación , 'vote_count'].values[0]
-    score = df.loc[df['title'] == titulo_de_la_filmación, 'popularity'].values[0]
-    year = df.loc[df['title'] == titulo_de_la_filmación, 'year'].values[0]
-
-    vote_average = df.loc[df['title'] == titulo_de_la_filmación, 'vote_average'].values[0]
-    if vote_count > 2000:
-        print('La película', titulo_de_la_filmación, 'fue estrenada en el año.', year, 'La misma cuenta con un total de', vote_count,'valoraciones, con un promedio de', vote_average)
-    else:
-        print('la pelicula que busca no cumple con la condicion de mas de 2000 votos por ende no se devolvera ningun valor') 
-    print('el año fue :', year, 'y la puntuacion fue', score)
+@app.get("/peliculas_pais/{Pais}")
+def peliculas_pais( Pais: str ):
+    pais = df[df["production_countries"].str.contains(Pais, na=False)]
+    cantidad_peliculas = len(pais)
+    return f"Se produjeron ", {cantidad_peliculas},  "películas en el país ", {Pais}
 #FUNCION 5
-@app.get("/extract_month/{date_string}")
-def extract_day(date_string):
-    dias = {
-        'lunes': 1,
-        'martes': 2,
-        'miércoles': 3,
-        'jueves': 4,
-        'viernes': 5,
-        'sábado': 6,
-        'sabado': 6,
-        'domingo': 7
-    }
-    if pd.isna(date_string):
-        return None
-    try:
-        date_object = datetime.strptime(date_string, '%Y-%m-%d')
-        return date_object.day
-    except ValueError: 
-        return None
+@app.get("/productora_exitosa/{productora}")
+def productora_exitosa(productora:str):
+    productora_filtro = df[df['production_companies'] == productora]
+    cantidad = productora_filtro['revenue'].sum()
+    cantidad_peliculas = productora_filtro['production_companies'].shape[0]
+    return{'productora:':productora, 'ganancias totales:':cantidad, 'cantidad de peliculas generadas:':cantidad_peliculas}
+productora_exitosa('Universal Pictures')
 
 df['day'] = df['release_date'].apply(extract_day)
 dia = 1  # Establece el valor de 'dia' según tus necesidades
 day = df.loc[df['day'] == dia, 'day'].shape[0]
 print(day)
 #FUNCION 6
-@app.get("/extract_day/{date_string}")
-def extract_day(date_string):
-    dias = {
-        'lunes': 1,
-        'martes': 2,
-        'miércoles': 3,
-        'jueves': 4,
-        'viernes': 5,
-        'sábado': 6,
-        'sabado': 6,
-        'domingo': 7
-    }
-    if pd.isna(date_string):
-        return None
-    try:
-        date_object = datetime.strptime(date_string, '%Y-%m-%d')
-        return date_object.day
-    except ValueError: 
-        return None
-
-df['day'] = df['release_date'].apply(extract_day)
-dia = 1  # Establece el valor de 'dia' según tus necesidades
-day = df.loc[df['day'] == dia, 'day'].shape[0]
-print(day)
+@app.get("/get_director/{nombre_director}")
+def get_director(nombre_director):
+    director_films = df[df['directors'].notnull() & df['directors'].str.contains(nombre_director)]
+    director_titles = df[df['directors'].notnull() & df['directors'].str.contains(nombre_director, na=False)]['title'].tolist()
+    director_return = df[df['directors'].notnull() & df['directors'].str.contains(nombre_director, na=False)]['return'].sum()
+    for movie in director_titles:
+        revenue = df.loc[df['title'] == movie, 'revenue'].values[0]
+        print('Las películas y sus ganancias:', movie, revenue)
+    directors_count = len(director_films)
+    print('El número de películas que ha dirigido es:', directors_count)
+    print('Sus películas fueron:', director_titles)
+    print('Sus ganancias totales son:', director_return)
