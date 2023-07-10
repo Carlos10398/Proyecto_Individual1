@@ -12,7 +12,13 @@ from sklearn.metrics.pairwise        import linear_kernel
 
 
 app = FastAPI()
+### PRESENTACION:
+### Creaoms consulta como presentacion con nuestro nombre
+@app.get('/')
+def presentacion():
+    return 'Carlos_Vargas'
 
+### IMPORTAMOS LOS DATOS
 df = pd.read_csv('final.csv',sep = ',')
 #FUNCION 1
 @app.get("/score_titulo/{titulo_de_la_filmación}")
