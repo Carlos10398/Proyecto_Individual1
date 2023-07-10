@@ -35,18 +35,13 @@ def peliculas_duracion(pelicula:str):
     return {'PELICULA:':pelicula,'duracion en minutos:':duracion, 'año de estreno:':year } 
 peliculas_duracion('Jumanji')
 #FUNCION 3
-@app.get("/get_director/{nombre_director}")
-def get_director(nombre_director):
-    director_films = df[df['directors'].notnull() & df['directors'].str.contains(nombre_director)]
-    director_titles = df[df['directors'].notnull() & df['directors'].str.contains(nombre_director, na=False)]['title'].tolist()
-    director_return = df[df['directors'].notnull() & df['directors'].str.contains(nombre_director, na=False)]['return'].sum()
-    for movie in director_titles:
-        revenue = df.loc[df['title'] == movie, 'revenue'].values[0]
-        print('Las películas y sus ganancias:', movie, revenue)
-    directors_count = len(director_films)
-    print('El número de películas que ha dirigido es:', directors_count)
-    print('Sus películas fueron:', director_titles)
-    print('Sus ganancias totales son:', director_return)
+@app.get("/obtener_informacion_franquicia/{franquicia}")
+def obtener_informacion_franquicia(franquicia):
+    franquicia_df = df[df["name"].str.contains(franquicia, na=False)]
+    cantidad_peliculas = len(franquicia_df)
+    ganancia_total = franquicia_df["revenue"].sum()
+    ganancia_promedio = franquicia_df["revenue"].mean()
+    return f"La franquicia {franquicia} posee {cantidad_peliculas} películas, una ganancia total de {ganancia_total} y una ganancia promedio de {ganancia_promedio}."
 #FUNCION 4
 @app.get("/score_titulo/{titulo_de_la_filmación}")
 def score_titulo(titulo_de_la_filmación):
