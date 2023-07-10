@@ -33,7 +33,6 @@ def peliculas_duracion(pelicula:str):
     duracion = filtro["runtime"].values[0] if len(pelicula) > 0 else None
     year = filtro["year"].values[0] if len(pelicula) > 0 else None
     return {'PELICULA:':pelicula,'duracion en minutos:':duracion, 'año de estreno:':year } 
-peliculas_duracion('Jumanji')
 #FUNCION 3
 @app.get("/obtener_informacion_franquicia/{franquicia}")
 def obtener_informacion_franquicia(franquicia):
