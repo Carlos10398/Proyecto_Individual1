@@ -55,11 +55,6 @@ def productora_exitosa(productora:str):
     cantidad_peliculas = productora_filtro['production_companies'].shape[0]
     return{'productora:':productora, 'ganancias totales:':cantidad, 'cantidad de peliculas generadas:':cantidad_peliculas}
 productora_exitosa('Universal Pictures')
-
-df['day'] = df['release_date'].apply(extract_day)
-dia = 1  # Establece el valor de 'dia' según tus necesidades
-day = df.loc[df['day'] == dia, 'day'].shape[0]
-print(day)
 #FUNCION 6
 @app.get("/get_director/{nombre_director}")
 def get_director(nombre_director):
