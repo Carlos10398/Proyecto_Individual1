@@ -30,7 +30,7 @@ def score_titulo(titulo_de_la_filmación):
 def get_actor(nombre_actor):
     actor_rows = df[df['cast_names'].str.contains(nombre_actor)]
     numero = len(actor_rows)
-    actor_revenue = df[df['cast_names'].str.contains(info)]['revenue'].sum()
+    actor_revenue = df[df['cast_names'].str.contains(nombre_actor)]['revenue'].sum()
     promedio = (actor_revenue/numero)
     return ' El actor '+ nombre_actor + ' ha participado de ' + str(numero) + ' cantidad de filmaciones, el mismo ha conseguido un retorno de ' + str(actor_revenue) +' con un promedio de '+ str(promedio) + 'por filmación'
 get_actor('Tom Hanks')
@@ -56,7 +56,7 @@ def score_titulo(titulo_de_la_filmación):
 
     vote_average = df.loc[df['title'] == titulo_de_la_filmación, 'vote_average'].values[0]
     if vote_count > 2000:
-        print('La película', info, 'fue estrenada en el año.', year, 'La misma cuenta con un total de', vote_count,'valoraciones, con un promedio de', vote_average)
+        print('La película', titulo_de_la_filmación, 'fue estrenada en el año.', year, 'La misma cuenta con un total de', vote_count,'valoraciones, con un promedio de', vote_average)
     else:
         print('la pelicula que busca no cumple con la condicion de mas de 2000 votos por ende no se devolvera ningun valor') 
     print('el año fue :', year, 'y la puntuacion fue', score)
