@@ -1,6 +1,6 @@
 # Proyecto_Individual1
 # Proyecto personal nmro 1 del bootcamp SoyHenry
-[image](https://github.com/Carlos10398/Proyecto_Individual1/assets/75910244/e0c9690a-5239-46e2-b2d1-254d5137e423)
+![image](https://github.com/Carlos10398/Proyecto_Individual1/assets/75910244/e0c9690a-5239-46e2-b2d1-254d5137e423)
 
 Procedimiento - Definición del problema (Contexto y papel a desempeñar)
 En este proyecto, llevaré a cabo un proceso de ETL (Extracción, Transformación y Carga), la creación de una API (Interfaz de Programación de Aplicaciones), EDA (Análisis Exploratorio de Datos) y concluiremos con un modelo de aprendizaje automático (ML) para la recomendación de películas.
