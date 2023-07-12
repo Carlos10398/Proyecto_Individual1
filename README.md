@@ -1,6 +1,12 @@
 # Proyecto_Individual 1 - Carlos Vargas
 ![image](https://github.com/Carlos10398/Proyecto_Individual1/assets/75910244/e0c9690a-5239-46e2-b2d1-254d5137e423)
+¡Bienvenidos al primer proyecto individual de la etapa de labs! En esta ocasión, deberen hacer un trabajo situándome en el rol de un MLOps Engineer.
 
+Descripción del problema (Contexto y rol a desarrollar)
+Contexto
+Tienes tu modelo de recomendación dando unas buenas métricas 😏, y ahora, cómo lo llevas al mundo real? 👀
+
+El ciclo de vida de un proyecto de Machine Learning debe contemplar desde el tratamiento y recolección de los datos (Data Engineer stuff) hasta el entrenamiento y mantenimiento del modelo de ML según llegan nuevos datos.
 Procedimiento - Definición del problema (Contexto y papel a desempeñar)
 En este proyecto, llevaré a cabo un proceso de ETL (Extracción, Transformación y Carga), la creación de una API (Interfaz de Programación de Aplicaciones), EDA (Análisis Exploratorio de Datos) y concluiremos con un modelo de aprendizaje automático (ML) para la recomendación de películas.
 
