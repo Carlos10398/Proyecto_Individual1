@@ -1,6 +1,7 @@
                                                     # Proyecto_Individual 1 - Carlos Vargas
-                    [image](https://github.com/Carlos10398/Proyecto_Individual1/assets/75910244/e0c9690a-5239-46e2-b2d1-254d5137e423)
-¡Bienvenidos al primer proyecto individual de la etapa de labs! En esta ocasión, deberen hacer un trabajo situándome en el rol de un MLOps Engineer.
+<p align="center">
+  <img src="https://github.com/Carlos10398/Proyecto_Individual1/assets/75910244/e0c9690a-5239-46e2-b2d1-254d5137e423" alt="image">
+</p>¡Bienvenidos al primer proyecto individual de la etapa de labs! En esta ocasión, deberen hacer un trabajo situándome en el rol de un MLOps Engineer.
 
 Descripción del problema (Contexto y rol a desarrollar)
 Contexto
