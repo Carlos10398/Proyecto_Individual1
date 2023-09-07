@@ -1,6 +1,7 @@
                                                     # Proyecto_Individual 1 - Carlos Vargas
-<p align="center"><img src="https://github.com/Carlos10398/Proyecto_Individual1/assets/75910244/e0c9690a-5239-46e2-b2d1-254d5137e423" alt="image">
-PROYECTO INDIVIDUAL Nº1
+<p align="center">
+  <img src="https://github.com/Carlos10398/Proyecto_Individual1/assets/75910244/e0c9690a-5239-46e2-b2d1-254d5137e423" alt="image">
+</p>PROYECTO INDIVIDUAL Nº1
 Machine Learning Operations (MLOps)
 Henry's Labs
 Por Carlos Vargas Trujillo 
@@ -51,12 +52,19 @@ def productoras(productora): '''Ingresas la productora, retornando la ganancia t
 def retorno(pelicula): '''Ingresas la pelicula, retornando la inversion, la ganancia, el retorno y el año en el que se lanzo''' return {'pelicula':pelicula, 'inversion':respuesta, 'ganacia':respuesta,'retorno':respuesta, 'anio':respuesta}
 
 3. Etapa del proceso EDA ➡️
+4. 
 Ya con la data limpia, se hace si existen outliers con un boxplot.
-Analizar cuantos valores nulos hay por cada columna, lo visualizamos con un gráfico que elaboré.
+
+Analizar cuantos valores nulos hay por cada columna, lo visualizamos con un gráfico que elaboré
+
 Vemos si existe alguna correlación. . Se aprecia el Top 10 años con mas popularidad, igualmente con Películas con mayor ganancia.
+
 La relacion entre revenue y budget con un scatter.
-4. Etapa del Sistema de Recomendación ➡️
+
+6. Etapa del Sistema de Recomendación ➡️
+   
 . def recomendacion('titulo'): '''Ingresas un nombre de pelicula y te recomienda las similares en una lista de 5 valores''' return {'lista recomendada': respuesta}
+
 #FUNCION 1
 @app.get("/score_titulo/{titulo_de_la_filmación}")
 def peliculas_idioma(idioma:str):
@@ -96,6 +104,7 @@ def productora_exitosa(productora:str):
     cantidad_peliculas = productora_filtro['production_companies'].shape[0]
     return{'productora:':productora, 'ganancias totales:':cantidad, 'cantidad de peliculas generadas:':cantidad_peliculas}
 productora_exitosa('Universal Pictures')
+
 #FUNCION 6
 
 @app.get("/get_director/{nombre_director}")
