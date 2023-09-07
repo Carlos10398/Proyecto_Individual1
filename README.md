@@ -52,7 +52,7 @@ def productoras(productora): '''Ingresas la productora, retornando la ganancia t
 def retorno(pelicula): '''Ingresas la pelicula, retornando la inversion, la ganancia, el retorno y el año en el que se lanzo''' return {'pelicula':pelicula, 'inversion':respuesta, 'ganacia':respuesta,'retorno':respuesta, 'anio':respuesta}
 
 3. Etapa del proceso EDA ➡️
-4. 
+
 Ya con la data limpia, se hace si existen outliers con un boxplot.
 
 Analizar cuantos valores nulos hay por cada columna, lo visualizamos con un gráfico que elaboré
@@ -61,7 +61,7 @@ Vemos si existe alguna correlación. . Se aprecia el Top 10 años con mas popula
 
 La relacion entre revenue y budget con un scatter.
 
-6. Etapa del Sistema de Recomendación ➡️
+4. Etapa del Sistema de Recomendación ➡️
    
 . def recomendacion('titulo'): '''Ingresas un nombre de pelicula y te recomienda las similares en una lista de 5 valores''' return {'lista recomendada': respuesta}
 
