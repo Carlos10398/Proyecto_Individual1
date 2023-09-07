@@ -1,11 +1,13 @@
-                                                    # Proyecto_Individual 1 - Carlos Vargas
+<p align="center">
+  <h3 style="font-size: 20px;">Proyecto_Individual 1 - Carlos Vargas</h3>
 <p align="center">
   <img src="https://github.com/Carlos10398/Proyecto_Individual1/assets/75910244/e0c9690a-5239-46e2-b2d1-254d5137e423" alt="image">
 </p>PROYECTO INDIVIDUAL Nº1
-Machine Learning Operations (MLOps)
-Henry's Labs
-Por Carlos Vargas Trujillo 
-ESTRUCTURA DEL PROYECTO ⚪
+<h3 style="font-size: 16px;">Machine Learning Operations (MLOps)</h3>
+#Henry's Labs
+#Por Carlos Vargas Trujillo 
+#ESTRUCTURA DEL PROYECTO ⚪
+
 Los principales archivos desarrollados (que en el apartado siguiente se describirán en forma detallada y precisa su contenido, son:
 
 ETL.ipynb
