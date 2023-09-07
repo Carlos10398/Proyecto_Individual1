@@ -50,6 +50,7 @@ En la columna de belongs_to_collection lo pasaremos a todo con minusculas con lo
 Y por ultimo lo exportamos para hacer las APIS.
 
 2. Etapa de desarrollo API ➡️
+   
 def peliculas_mes(mes): '''Se ingresa el mes y la funcion retorna la cantidad de peliculas que se estrenaron ese mes (nombre del mes, en str, ejemplo 'enero') historicamente''' return {'mes':mes, 'cantidad':respuesta}
 
 def peliculas_dia(dia): '''Se ingresa el dia y la funcion retorna la cantidad de peliculas que se estrenaron ese dia (de la semana, en str, ejemplo 'lunes') historicamente''' return {'dia':dia, 'cantidad':respuesta}
