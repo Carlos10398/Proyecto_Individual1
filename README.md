@@ -23,7 +23,7 @@ main.py
 <hr>
 DESARROLLO DE LA SOLUCIÓN (PROYECTO) ⚪
 
-1. Etapa del proceso ETL ➡️
+<h3 style="font-size: 16px;">1. Etapa del proceso ETL ➡️</h3>
    
 Cargamos el archivos csv con la libereria pandas.
 
@@ -49,7 +49,7 @@ En la columna de belongs_to_collection lo pasaremos a todo con minusculas con lo
 
 Y por ultimo lo exportamos para hacer las APIS.
 
-2. Etapa de desarrollo API ➡️
+<h3 style="font-size: 16px;">2. Etapa de desarrollo API ➡️</h3>
    
 def peliculas_mes(mes): '''Se ingresa el mes y la funcion retorna la cantidad de peliculas que se estrenaron ese mes (nombre del mes, en str, ejemplo 'enero') historicamente''' return {'mes':mes, 'cantidad':respuesta}
 
@@ -63,7 +63,7 @@ def productoras(productora): '''Ingresas la productora, retornando la ganancia t
 
 def retorno(pelicula): '''Ingresas la pelicula, retornando la inversion, la ganancia, el retorno y el año en el que se lanzo''' return {'pelicula':pelicula, 'inversion':respuesta, 'ganacia':respuesta,'retorno':respuesta, 'anio':respuesta}
 
-3. Etapa del proceso EDA ➡️
+<h3 style="font-size: 16px;">3. Etapa del proceso EDA ➡️</h3>
 
 Ya con la data limpia, se hace si existen outliers con un boxplot.
 
@@ -73,10 +73,11 @@ Vemos si existe alguna correlación. . Se aprecia el Top 10 años con mas popula
 
 La relacion entre revenue y budget con un scatter.
 
-4. Etapa del Sistema de Recomendación ➡️
+<h3 style="font-size: 16px;">4. Etapa del Sistema de Recomendación ➡️</h3>
    
 . def recomendacion('titulo'): '''Ingresas un nombre de pelicula y te recomienda las similares en una lista de 5 valores''' return {'lista recomendada': respuesta}
 
+<h3 style="font-size: 16px;">ANEXO funciones del api trabajadas</h3>
 #FUNCION 1
 @app.get("/score_titulo/{titulo_de_la_filmación}")
 def peliculas_idioma(idioma:str):
