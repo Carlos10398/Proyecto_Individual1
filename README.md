@@ -5,16 +5,23 @@
   <img src="https://github.com/Carlos10398/Proyecto_Individual1/assets/75910244/e0c9690a-5239-46e2-b2d1-254d5137e423" alt="image">
 </p>PROYECTO INDIVIDUAL Nº1
 <h3 style="font-size: 16px;">Machine Learning Operations (MLOps)</h3>
-#Henry's Labs
-#Por Carlos Vargas Trujillo 
-#ESTRUCTURA DEL PROYECTO ⚪
+
+<h3 style="font-size: 16px;">Henry's Labs</h3>
+
+<h3 style="font-size: 16px;">Por Carlos Vargas Trujillo</h3>
+
+<h3 style="font-size: 16px;">ESTRUCTURA DEL PROYECTO ⚪</h3>
 
 Los principales archivos desarrollados (que en el apartado siguiente se describirán en forma detallada y precisa su contenido, son:
 
 ETL.ipynb
+
 EDA.ipynb
+
 APIS.ipynb
+
 main.py
+
 DESARROLLO DE LA SOLUCIÓN (PROYECTO) ⚪
 1. Etapa del proceso ETL ➡️
 Cargamos el archivos csv con la libereria pandas.
