@@ -1,5 +1,5 @@
 <div align="center">
-  <h3 style="font-size: 20px;">Proyecto_Individual 1 - Carlos Vargas</h3>
+  <h3 style="font-size: 16px;">Proyecto_Individual 1 - Carlos Vargas</h3>
 </div>
 <p align="center">
   <img src="https://github.com/Carlos10398/Proyecto_Individual1/assets/75910244/e0c9690a-5239-46e2-b2d1-254d5137e423" alt="image">
