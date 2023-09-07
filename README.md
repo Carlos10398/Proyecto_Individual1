@@ -1,17 +1,14 @@
-<div align="center">
-  <h3 style="font-size: 16px;">Proyecto_Individual 1 - Carlos Vargas</h3>
-</div>
 <p align="center">
   <img src="https://github.com/Carlos10398/Proyecto_Individual1/assets/75910244/e0c9690a-5239-46e2-b2d1-254d5137e423" alt="image">
   
 <h3 style="font-size: 16px;">PROYECTO INDIVIDUAL Nº1</h3>
-
+<hr>
 <h3 style="font-size: 16px;">Machine Learning Operations (MLOps)</h3>
-
+<hr>
 <h3 style="font-size: 16px;">Henry's Labs</h3>
-
+<hr>
 <h3 style="font-size: 16px;">Por Carlos Vargas Trujillo</h3>
-
+<hr>
 <h3 style="font-size: 16px;">ESTRUCTURA DEL PROYECTO ⚪</h3>
 
 Los principales archivos desarrollados (que en el apartado siguiente se describirán en forma detallada y precisa su contenido, son:
@@ -23,9 +20,11 @@ EDA.ipynb
 APIS.ipynb
 
 main.py
-
+<hr>
 DESARROLLO DE LA SOLUCIÓN (PROYECTO) ⚪
+
 1. Etapa del proceso ETL ➡️
+   
 Cargamos el archivos csv con la libereria pandas.
 
 Luego hacemos todo el trabajo ETL(Extract,Transform,Load)
@@ -50,7 +49,7 @@ En la columna de belongs_to_collection lo pasaremos a todo con minusculas con lo
 
 Y por ultimo lo exportamos para hacer las APIS.
 
-3. Etapa de desarrollo API ➡️
+2. Etapa de desarrollo API ➡️
 def peliculas_mes(mes): '''Se ingresa el mes y la funcion retorna la cantidad de peliculas que se estrenaron ese mes (nombre del mes, en str, ejemplo 'enero') historicamente''' return {'mes':mes, 'cantidad':respuesta}
 
 def peliculas_dia(dia): '''Se ingresa el dia y la funcion retorna la cantidad de peliculas que se estrenaron ese dia (de la semana, en str, ejemplo 'lunes') historicamente''' return {'dia':dia, 'cantidad':respuesta}
