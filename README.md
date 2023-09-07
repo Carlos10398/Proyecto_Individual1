@@ -1,65 +1,51 @@
                                                     # Proyecto_Individual 1 - Carlos Vargas
 <p align="center">
   <img src="https://github.com/Carlos10398/Proyecto_Individual1/assets/75910244/e0c9690a-5239-46e2-b2d1-254d5137e423" alt="image">
-</p>¡Bienvenidos al primer proyecto individual de la etapa de labs! En esta ocasión, deberen hacer un trabajo situándome en el rol de un MLOps Engineer.
+PROYECTO INDIVIDUAL Nº1
+Machine Learning Operations (MLOps)
+Henry's Labs
+Por Carlos Vargas Trujillo 
+ESTRUCTURA DEL PROYECTO ⚪
+Los principales archivos desarrollados (que en el apartado siguiente se describirán en forma detallada y precisa su contenido, son:
 
-Descripción del problema (Contexto y rol a desarrollar)
-Contexto
-Tienes tu modelo de recomendación dando unas buenas métricas 😏, y ahora, cómo lo llevas al mundo real? 👀
+ETL.ipynb
+EDA.ipynb
+APIS.ipynb
+main.py
+DESARROLLO DE LA SOLUCIÓN (PROYECTO) ⚪
+1. Etapa del proceso ETL ➡️
+Cargamos el archivos csv con la libereria pandas.
+Luego hacemos todo el trabajo ETL(Extract,Transform,Load)
+Pasamos los valores nulos o vacios de 'revenue' con 0 y igualmente lo hacemos con la columna 'budget'.
+Reordenamos el orden de fecha como nos piden al formato '%Y-%m-%d'.
+Separamos el año a una nueva columna que la llamaremos release_year.
+Desanidamos por el valor que queremos necesarios de las columnas 'genres', 'belongs_to_collection', 'production_companies' 'production_countries', 'spoken_languages'
+En una nueva columna que la llamaremos return sacar el resultado de la division entre las columnas revenue y budget.
+Eliminamos las columnas que no serán utilizadas, video,imdb_id,adult,original_title,vote_count,poster_path y homepage.
+En una nueva columna tengo que sacar el nombre del mes que tengo en la columna release_date, que lo pondremos en la columna month y igualmente hacemos con los dias de la semana que la pondremos en la columna que llamaremos day.
+En la columna 'day' tengo miércoles y sábado con tildes, le quitaremos las tildes para que nos pueda funcionar.
+En la columna de belongs_to_collection lo pasaremos a todo con minusculas con lower.
+Y por ultimo lo exportamos para hacer las APIS.
+2. Etapa de desarrollo API ➡️
+def peliculas_mes(mes): '''Se ingresa el mes y la funcion retorna la cantidad de peliculas que se estrenaron ese mes (nombre del mes, en str, ejemplo 'enero') historicamente''' return {'mes':mes, 'cantidad':respuesta}
 
-El ciclo de vida de un proyecto de Machine Learning debe contemplar desde el tratamiento y recolección de los datos (Data Engineer stuff) hasta el entrenamiento y mantenimiento del modelo de ML según llegan nuevos datos.
-Procedimiento - Definición del problema (Contexto y papel a desempeñar)
-En este proyecto, llevaré a cabo un proceso de ETL (Extracción, Transformación y Carga), la creación de una API (Interfaz de Programación de Aplicaciones), EDA (Análisis Exploratorio de Datos) y concluiremos con un modelo de aprendizaje automático (ML) para la recomendación de películas.
+def peliculas_dia(dia): '''Se ingresa el dia y la funcion retorna la cantidad de peliculas que se estrenaron ese dia (de la semana, en str, ejemplo 'lunes') historicamente''' return {'dia':dia, 'cantidad':respuesta}
 
- Contexto
-¿Cómo llevarás tu modelo de recomendación, que produce buenas métricas, al mundo real? 
- El ciclo de vida de un proyecto de aprendizaje automático debe considerar desde el manejo y recopilación de datos (tareas de ingeniería de datos) hasta la formación y mantenimiento del modelo de ML a medida que llegan nuevos datos.
+def franquicia(franquicia): '''Se ingresa la franquicia, retornando la cantidad de peliculas, ganancia total y promedio''' return {'franquicia':franquicia, 'cantidad':respuesta, 'ganancia_total':respuesta, 'ganancia_promedio':respuesta}
 
-Papel a desempeñar
-Acabas de empezar a trabajar como Científico de Datos en una start-up que ofrece servicios de agregación de plataformas de streaming. Vas a crear tu primer modelo de ML que resuelve un problema de negocio: un sistema de recomendación que aún no ha sido implementado!
- Al revisar los datos, te das cuenta de que la madurez de los mismos es baja: los datos están anidados, sin transformar, y no existen procesos automatizados para la actualización de nuevas películas o series, entre otras cosas, lo que hace tu trabajo muy difícil.
- Tendrás que empezar desde cero, realizando un rápido trabajo de ingeniería de datos y tener un Producto Mínimo Viable (MVP) para el cierre del proyecto. Aunque la tarea parece abrumadora, al menos tienes una idea clara del camino a seguir. Así que superas tus miedos y te pones manos a la obra.
- ETL (Extracción, Transformación y Carga)
+def peliculas_pais(pais): '''Ingresas el pais, retornando la cantidad de peliculas producidas en el mismo''' return {'pais':pais, 'cantidad':respuesta}
 
-Descripción de mis Datos: Característica\Descripción
+def productoras(productora): '''Ingresas la productora, retornando la ganancia total y la cantidad de peliculas que produjeron''' return {'productora':productora, 'ganancia_total':respuesta, 'cantidad':respuesta}
 
-•	adult: Indica si la película es clasificada como X, exclusiva para adultos.
-•	belongs_to_collection: Un diccionario que muestra a qué franquicia o serie de películas pertenece la película.
-•	budget: El presupuesto de la película, en dólares.
-•	genres: Un diccionario que muestra todos los géneros asociados a la película.
-•	homepage: La página web oficial de la película.
-•	id: ID de la película.
-•	imdb_id: ID de IMDB de la película.
-•	original_language: Idioma original de la película.
-•	original_title: Título original de la película.
-•	overview: Breve resumen de la película.
-•	popularity: Puntuación de popularidad de la película, asignada por TMDB (TheMoviesDataBase).
-•	poster_path: URL del póster de la película.
-•	production_companies: Lista de las compañías productoras asociadas a la película.
-•	production_countries: Lista de los países donde se produjo la película.
-•	release_date: Fecha de lanzamiento de la película.
-•	revenue: Recaudación de la película, en dólares.
-•	runtime: Duración de la película, en minutos.
-•	spoken_languages: Lista de los idiomas que se hablan en la película.
-•	status: Estado actual de la película (si fue anunciada, si ya se estrenó, etc).
-•	tagline: Frase célebre asociada a la película.
-•	title: Título de la película.
-•	video: Indica si hay o no un tráiler en video disponible en TMDB.
-•	vote_average: Puntuación promedio de las reseñas de la película.
-•	vote_count: Número de votos recibidos por la película, en TMDB.
+def retorno(pelicula): '''Ingresas la pelicula, retornando la inversion, la ganancia, el retorno y el año en el que se lanzo''' return {'pelicula':pelicula, 'inversion':respuesta, 'ganacia':respuesta,'retorno':respuesta, 'anio':respuesta}
 
-Transformaciones: Para este MVP no necesitas perfección, ¡necesitas rapidez! ⏩ Harás estas, y solo estas, transformaciones a los datos:
-
- Eliminar las columnas que no serán utilizadas, video, imdb_id, adult, original_title, poster_path y homepage.
- Los valores nulos de los campos revenue, budget deben ser rellenados con el número 0.
- Crear la columna con el retorno de inversión, llamada return con los campos revenue y budget, dividiendo estas dos últimas revenue / budget, cuando no hay datos disponibles para calcularlo, deberá tomar el valor 0.
- Los valores nulos del campo release date deben eliminarse. Si hay fechas, deben tener el formato AAAA-mm-dd, además deberán crear la columna release_year donde extraerán el año de la fecha de estreno.
- Algunos campos, como belongs_to_collection, production_companies y otros (ver diccionario de datos) están anidados, esto es o bien tienen un diccionario o una lista como valores en cada fila, ¡deberán desanidarlos para poder y unirlos al dataset de nuevo hacer alguna de las consultas de la API! O bien buscar la manera de acceder a esos datos sin desanidarlos.
- encontraremos este proceso en el archivo Datos-ETL.ipynb
- API (Interfaz de Programación de Aplicaciones)
-Desarrollo: Sugieres hacer disponibles los datos de la empresa utilizando el marco de trabajo FastAPI. Las consultas que sugieres son las siguientes:
- Deben crear 6 funciones para los endpoints que se consumirán en la API, recuerden que deben tener un decorador por cada una (@app.get(‘/’)).
-
+3. Etapa del proceso EDA ➡️
+Ya con la data limpia, se hace si existen outliers con un boxplot.
+Analizar cuantos valores nulos hay por cada columna, lo visualizamos con un gráfico que elaboré.
+Vemos si existe alguna correlación. . Se aprecia el Top 10 años con mas popularidad, igualmente con Películas con mayor ganancia.
+La relacion entre revenue y budget con un scatter.
+4. Etapa del Sistema de Recomendación ➡️
+. def recomendacion('titulo'): '''Ingresas un nombre de pelicula y te recomienda las similares en una lista de 5 valores''' return {'lista recomendada': respuesta}
 #FUNCION 1
 @app.get("/score_titulo/{titulo_de_la_filmación}")
 def peliculas_idioma(idioma:str):
