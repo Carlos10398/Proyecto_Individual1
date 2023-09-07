@@ -3,7 +3,9 @@
 </div>
 <p align="center">
   <img src="https://github.com/Carlos10398/Proyecto_Individual1/assets/75910244/e0c9690a-5239-46e2-b2d1-254d5137e423" alt="image">
-</p>PROYECTO INDIVIDUAL Nº1
+  
+<h3 style="font-size: 16px;">PROYECTO INDIVIDUAL Nº1</h3>
+
 <h3 style="font-size: 16px;">Machine Learning Operations (MLOps)</h3>
 
 <h3 style="font-size: 16px;">Henry's Labs</h3>
